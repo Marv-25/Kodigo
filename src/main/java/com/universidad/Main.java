@@ -11,9 +11,6 @@ public class Main {
         empleado1.mostrarUsuario();
         empleado1.eliminarUsuario();
 
-        Estudiante est1 = new Estudiante();
-        est1.getNombre();
-        est1.setNombre("tomas");
 
 
 
