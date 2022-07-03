@@ -78,11 +78,12 @@ public class Empleado extends Usuario {//implements Persona, displayUsuarios{
     }
 
     @Override
-    public void mostrarUsuario() {
+    public ArrayList mostrarUsuario() {
         for (int i=0; i< empleadosList.size(); i++){
             System.out.println(i+1);
             System.out.println(empleadosList.get(i));
         }
+        return (ArrayList) empleadosList;
     }
     @Override
     public void eliminarUsuario(){

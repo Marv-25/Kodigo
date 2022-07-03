@@ -4,6 +4,7 @@ import lombok.Getter;
 import lombok.Setter;
 
 import java.util.ArrayList;
+import java.util.List;
 
 
 public abstract class Usuario {
@@ -44,8 +45,8 @@ public abstract class Usuario {
     public ArrayList registrarUsuario() {
         return null;
     }
-    public void mostrarUsuario(){
-
+    public ArrayList mostrarUsuario(){
+        return null;
     }
 
     public void eliminarUsuario(){
