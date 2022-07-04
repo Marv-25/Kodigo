@@ -6,9 +6,17 @@ import lombok.Setter;
 import java.util.*;
 
 public class Empleado extends Usuario {//implements Persona, displayUsuarios{
+    @Setter
+    @Getter
     double salario;
+    @Setter
+    @Getter
     String rol;
+    @Setter
+    @Getter
     String cuentaBancaria;
+    @Setter
+    @Getter
     String profesion;
 
     public Empleado(int idUsuario, String nombre, String apellido, String sexo, String fechaNacimiento,
