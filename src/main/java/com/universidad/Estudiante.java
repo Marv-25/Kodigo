@@ -15,19 +15,14 @@ public class Estudiante extends Usuario{
     @Getter
     private String idCarrera;
 
-    public Estudiante(int idUsuario, String nombre, String apellido, String sexo,
-                      String fechaNacimiento, String statusUsuario) {
-        super(idUsuario, nombre, apellido, sexo, fechaNacimiento, statusUsuario);
-    }
+    private ArrayList<Materia> materiasList;
 
-
-/*public Estudiante(int idUsuario, String nombre, String apellido, String sexo,
-                      String fechaNacimiento, String statusUsuario, double promedio,
-                      String idCarrera) {
+    public Estudiante(int idUsuario, String nombre, String apellido, String sexo, String fechaNacimiento, String statusUsuario, double promedio, String idCarrera, ArrayList<Materia> materiasList) {
         super(idUsuario, nombre, apellido, sexo, fechaNacimiento, statusUsuario);
         this.promedio = promedio;
         this.idCarrera = idCarrera;
-    }*/
+        this.materiasList = materiasList;
+    }
 
 
     private List<Estudiante> estudiantesList = new ArrayList<>();
@@ -38,7 +33,7 @@ public class Estudiante extends Usuario{
     }
 
     @Override
-    public ArrayList registrarUsuario() {
+    public String registrarUsuario() {
         int listSize = estudiantesList.size();
         System.out.println("Cantidad de estudiantes a inscribir?");
             listSize = entrada.nextInt();
@@ -62,13 +57,10 @@ public class Estudiante extends Usuario{
             Estudiante estudianteNuevo = new Estudiante(id,nombre,apellido,sexo,fechaNacimiento,status);
             estudiantesList.add(estudianteNuevo);
         }
-        return (ArrayList) estudiantesList;
+        return "registro exitoso";
     }
 
-   /* @Override
-    public void mostrarUsuario() {
 
-    }*/
 
     public void mostarUsuario(){
         for (int i=0; i<estudiantesList.size(); i++){
@@ -76,6 +68,21 @@ public class Estudiante extends Usuario{
             System.out.println("Nombre: "+estudiantesList.get(i).getNombre());
             System.out.println("Apellido: "+estudiantesList.get(i).getApellido());
         }
+    }
+
+    @Override
+    public String toString() {
+        return "Estudiante{" +
+                "idUsuario=" + idUsuario +
+                ", nombre='" + nombre + '\'' +
+                ", apellido='" + apellido + '\'' +
+                ", sexo='" + sexo + '\'' +
+                ", fechaNacimiento='" + fechaNacimiento + '\'' +
+                ", statusUsuario='" + statusUsuario + '\'' +
+                ", promedio=" + promedio +
+                ", idCarrera='" + idCarrera + '\'' +
+                ", materiasList=" + materiasList +
+                '}';
     }
 }
 
