@@ -5,7 +5,7 @@ import lombok.Setter;
 
 import java.util.*;
 
-public class Empleado extends Usuario {//implements Persona, displayUsuarios{
+public class Empleado extends Usuario{
     @Setter
     @Getter
     double salario;
@@ -65,7 +65,6 @@ public class Empleado extends Usuario {//implements Persona, displayUsuarios{
         for (int i = 0; i < listSize; i++) {
             System.out.println(i + 1);
             System.out.println("ID asignado");
-
             int id = (int) (Math.random() * 10000);
             System.out.println(id);
             entrada.nextLine();
@@ -98,7 +97,7 @@ public class Empleado extends Usuario {//implements Persona, displayUsuarios{
     }
 
     @Override
-    public ArrayList mostrarUsuario() {
+    public ArrayList listarUsuario() {
 
         if (empleadosList.size() == 0) {
             System.out.println("Lista de empleados vacia");
@@ -107,14 +106,10 @@ public class Empleado extends Usuario {//implements Persona, displayUsuarios{
                 System.out.println(i + 1);
                 System.out.println(empleadosList.get(i));
             }
-
             for (int i = 0; i < empleadosList.size(); i++) {
                 System.out.println(i + 1);
                 System.out.println(empleadosList.get(i));
-
             }
-
-
         }
         return (ArrayList) empleadosList;
     }

@@ -45,7 +45,7 @@ public abstract class Usuario {
     public ArrayList registrarUsuario() {
         return null;
     }
-    public ArrayList mostrarUsuario(){
+    public ArrayList listarUsuario(){
         return null;
     }
 
