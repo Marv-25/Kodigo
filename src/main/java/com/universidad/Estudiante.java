@@ -8,11 +8,9 @@ import java.util.List;
 import java.util.Scanner;
 
 public class Estudiante extends Usuario{
-    @Setter
-    @Getter
+    @Setter @Getter
     private double promedio;
-    @Setter
-    @Getter
+    @Setter @Getter
     private String idCarrera;
 
     public Estudiante(int idUsuario, String nombre, String apellido, String sexo,
