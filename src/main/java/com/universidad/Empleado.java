@@ -1,5 +1,8 @@
 package com.universidad;
 
+import lombok.Getter;
+import lombok.Setter;
+
 import java.util.*;
 
 public class Empleado extends Usuario {//implements Persona, displayUsuarios{
@@ -37,6 +40,8 @@ public class Empleado extends Usuario {//implements Persona, displayUsuarios{
     }
 
     Scanner entrada = new Scanner(System.in);
+
+    @Setter @Getter
     private List<Empleado> empleadosList = new ArrayList<>();
     @Override
     public ArrayList registrarUsuario() {
@@ -46,6 +51,7 @@ public class Empleado extends Usuario {//implements Persona, displayUsuarios{
         for (int i = 0; i < listSize; i++) {
             System.out.println(i+1);
             System.out.println("ID asignado");
+
             int id = (int) (Math.random()*10000);
             System.out.println(id);
             entrada.nextLine();
@@ -79,12 +85,14 @@ public class Empleado extends Usuario {//implements Persona, displayUsuarios{
 
     @Override
     public ArrayList mostrarUsuario() {
-        for (int i=0; i< empleadosList.size(); i++){
-            System.out.println(i+1);
+        for (int i = 0; i < empleadosList.size(); i++) {
+            System.out.println(i + 1);
             System.out.println(empleadosList.get(i));
         }
+
         return (ArrayList) empleadosList;
     }
+
     @Override
     public void eliminarUsuario(){
         System.out.println("Indique el indice del empleado a eliminar");
