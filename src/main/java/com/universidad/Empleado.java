@@ -28,6 +28,10 @@ public class Empleado extends Usuario {//implements Persona, displayUsuarios{
         this.profesion = profesion;
     }
 
+    public Empleado(List<Empleado> empleadosList) {
+        this.empleadosList = empleadosList;
+    }
+
     public Empleado() {
     }
 
@@ -90,20 +94,29 @@ public class Empleado extends Usuario {//implements Persona, displayUsuarios{
 
     @Override
     public ArrayList mostrarUsuario() {
-        for (int i=0; i< empleadosList.size(); i++){
-            System.out.println(i+1);
-            System.out.println(empleadosList.get(i));
+        if (empleadosList.size()==0){
+            System.out.println("Lista de empleados vacia");
+        }else{
+            for (int i=0; i< empleadosList.size(); i++){
+                System.out.println(i+1);
+                System.out.println(empleadosList.get(i));
+            }
         }
         return (ArrayList) empleadosList;
     }
     @Override
     public void eliminarUsuario(){
-        System.out.println("Indique el indice del empleado a eliminar");
-        int indice = entrada.nextInt();
-        empleadosList.remove(indice-1);
-        Iterator iterador = empleadosList.iterator();
-        while(iterador.hasNext()){
-            System.out.println(iterador.next());
+        if (empleadosList.size()==0){
+            System.out.println("Lista vacia, imposible eliminar empleado");
+        }else{
+            System.out.println("Indique el indice del empleado a eliminar");
+            int indice = entrada.nextInt();
+            empleadosList.remove(indice-1);
+            Iterator iterador = empleadosList.iterator();
+            while(iterador.hasNext()){
+                System.out.println(iterador.next());
+            }
         }
+
     }
 }
