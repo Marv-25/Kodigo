@@ -37,12 +37,12 @@ public class Empleado extends Usuario {//implements Persona, displayUsuarios{
 
     @Override
     public String toString() {
-        return "Empleado{" +'\n'+
-                "ID Usuario= " + idUsuario +'\n'+
+        return "Empleado{" + '\n' +
+                "ID Usuario= " + idUsuario + '\n' +
                 "nombre= " + nombre + '\n' +
                 "apellido= " + apellido + '\n' +
                 "sexo= " + sexo + '\n' +
-                "Fecha de nacimiento= " + fechaNacimiento +'\n'+
+                "Fecha de nacimiento= " + fechaNacimiento + '\n' +
                 "Status= " + statusUsuario + '\n' +
                 "salario= " + salario + '\n' +
                 "rol= " + rol + '\n' +
@@ -52,16 +52,21 @@ public class Empleado extends Usuario {//implements Persona, displayUsuarios{
     }
 
     Scanner entrada = new Scanner(System.in);
+
+    @Setter
+    @Getter
     private List<Empleado> empleadosList = new ArrayList<>();
+
     @Override
     public ArrayList registrarUsuario() {
         int listSize = empleadosList.size();
         System.out.println("Cantidad de empleados a registrar");
         listSize = entrada.nextInt();
         for (int i = 0; i < listSize; i++) {
-            System.out.println(i+1);
+            System.out.println(i + 1);
             System.out.println("ID asignado");
-            int id = (int) (Math.random()*10000);
+
+            int id = (int) (Math.random() * 10000);
             System.out.println(id);
             entrada.nextLine();
             System.out.println("Nombre del empleado");
@@ -85,8 +90,8 @@ public class Empleado extends Usuario {//implements Persona, displayUsuarios{
             String profesion = entrada.nextLine();
             entrada.nextLine();
 
-            Empleado empleadoNuevo = new Empleado(id,nombre,apellido,sexo,fechaNacimiento,status,salario,rol,
-                    cuentaBancaria,profesion);
+            Empleado empleadoNuevo = new Empleado(id, nombre, apellido, sexo, fechaNacimiento, status, salario, rol,
+                    cuentaBancaria, profesion);
             empleadosList.add(empleadoNuevo);
         }
         return (ArrayList) empleadosList;
@@ -94,26 +99,36 @@ public class Empleado extends Usuario {//implements Persona, displayUsuarios{
 
     @Override
     public ArrayList mostrarUsuario() {
-        if (empleadosList.size()==0){
+
+        if (empleadosList.size() == 0) {
             System.out.println("Lista de empleados vacia");
-        }else{
-            for (int i=0; i< empleadosList.size(); i++){
-                System.out.println(i+1);
+        } else {
+            for (int i = 0; i < empleadosList.size(); i++) {
+                System.out.println(i + 1);
                 System.out.println(empleadosList.get(i));
             }
+
+            for (int i = 0; i < empleadosList.size(); i++) {
+                System.out.println(i + 1);
+                System.out.println(empleadosList.get(i));
+
+            }
+
+
         }
         return (ArrayList) empleadosList;
     }
+
     @Override
-    public void eliminarUsuario(){
-        if (empleadosList.size()==0){
+    public void eliminarUsuario() {
+        if (empleadosList.size() == 0) {
             System.out.println("Lista vacia, imposible eliminar empleado");
-        }else{
+        } else {
             System.out.println("Indique el indice del empleado a eliminar");
             int indice = entrada.nextInt();
-            empleadosList.remove(indice-1);
+            empleadosList.remove(indice - 1);
             Iterator iterador = empleadosList.iterator();
-            while(iterador.hasNext()){
+            while (iterador.hasNext()) {
                 System.out.println(iterador.next());
             }
         }
