@@ -59,6 +59,10 @@ public class Empleado extends Usuario{
 
     @Override
     public String registrarUsuario() {
+        String nombre;
+        String apellido;
+        String sexo;
+
         int listSize = empleadosList.size();
         System.out.println("Cantidad de empleados a registrar");
         listSize = entrada.nextInt();
@@ -69,11 +73,16 @@ public class Empleado extends Usuario{
             System.out.println(id);
             entrada.nextLine();
             System.out.println("Nombre del empleado");
-            String nombre = entrada.nextLine();
+            nombre = entrada.nextLine();
             System.out.println("Apellido del empleado");
-            String apellido = entrada.nextLine();
-            System.out.println("Ingresar sexo del empleado(FEM o MAS)");
-            String sexo = entrada.nextLine();
+            apellido = entrada.nextLine();
+
+            do {//VALIDACION DE PARAMETRO SEXO
+                System.out.println("Ingresar sexo del empleado(FEM o MAS)");
+                sexo = entrada.nextLine();
+                System.out.println(sexo);
+            }while (!((sexo.compareTo("FEM")==0)||(sexo.compareTo("MAS")==0)));
+
             System.out.println("Fecha de nacimiento");
             String fechaNacimiento = entrada.nextLine();
             System.out.println("Status del empleado");
