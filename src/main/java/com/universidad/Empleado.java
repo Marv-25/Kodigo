@@ -72,8 +72,12 @@ public class Empleado extends Usuario{
             int id = (int) (Math.random() * 10000);
             System.out.println(id);
             entrada.nextLine();
-            System.out.println("Nombre del empleado");
-            nombre = entrada.nextLine();
+            do {
+                System.out.println("Nombre del empleado");
+                nombre = entrada.nextLine();
+            }while(!(nombre.compareTo("^[A-Za-z\\s]{1,}[\\.]{0,1}[A-Za-z\\s]{0,}$")==0));
+
+
             System.out.println("Apellido del empleado");
             apellido = entrada.nextLine();
 
