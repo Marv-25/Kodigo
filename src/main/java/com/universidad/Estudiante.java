@@ -24,7 +24,6 @@ public class Estudiante extends Usuario{
         this.materiasList = materiasList;
     }
 
-
     private List<Estudiante> estudiantesList = new ArrayList<>();
     Scanner entrada = new Scanner(System.in);
 
@@ -52,9 +51,11 @@ public class Estudiante extends Usuario{
             String fechaNacimiento = entrada.nextLine();
             System.out.println("Status del Alumno");
             String status = entrada.nextLine();
+            System.out.println("Id Carrera");
+            String carrera = entrada.nextLine();
             entrada.nextLine();
 
-            Estudiante estudianteNuevo = new Estudiante(id,nombre,apellido,sexo,fechaNacimiento,status);
+            Estudiante estudianteNuevo = new Estudiante(id,nombre,apellido,sexo,fechaNacimiento,status,0.0,carrera,new ArrayList<>());
             estudiantesList.add(estudianteNuevo);
         }
         return "registro exitoso";

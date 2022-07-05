@@ -58,7 +58,7 @@ public class Empleado extends Usuario{
     private List<Empleado> empleadosList = new ArrayList<>();
 
     @Override
-    public ArrayList registrarUsuario() {
+    public String registrarUsuario() {
         int listSize = empleadosList.size();
         System.out.println("Cantidad de empleados a registrar");
         listSize = entrada.nextInt();
@@ -93,7 +93,7 @@ public class Empleado extends Usuario{
                     cuentaBancaria, profesion);
             empleadosList.add(empleadoNuevo);
         }
-        return (ArrayList) empleadosList;
+        return "se registró correctamente";
     }
 
     @Override

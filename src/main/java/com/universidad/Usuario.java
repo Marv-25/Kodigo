@@ -42,7 +42,7 @@ public abstract class Usuario {
 
     }
 
-    public ArrayList registrarUsuario() {
+    public String registrarUsuario() {
         return null;
     }
     public ArrayList listarUsuario(){

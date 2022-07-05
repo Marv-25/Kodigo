@@ -44,11 +44,11 @@ public class Materia {
         this.fechaFin = fechaFin;
     }
 
-    public void mostrarmaterias(){
-        for (int i=0; i < idMateria.length; i++ ){
-            System.out.println("Indice: "+  (i) +  " Codigo: " + idMateria[i] + " " + "Materia: " + nombreMateria[i] );
-        }
-    }
+  //  public void mostrarmaterias(){
+  //      for (int i=0; i < idMateria.length; i++ ){
+   //         System.out.println("Indice: "+  (i) +  " Codigo: " + idMateria[i] + " " + "Materia: " + nombreMateria[i] );
+  //      }
+  //  }
 
     @Override
     public String toString() {
@@ -93,7 +93,7 @@ public class Materia {
            tabla.addCell(cell1);
 
            Cell cell2 = new Cell();
-           cell2.add(idMateria[nmateria]);
+           cell2.add(idMateria);
            tabla.addCell(cell2);
 
 
@@ -103,7 +103,7 @@ public class Materia {
            tabla.addCell(cell3);
 
            Cell cell4 = new Cell();
-           cell4.add(nombreMateria[nmateria]);
+           cell4.add(nombreMateria);
            tabla.addCell(cell4);
 
            //tercera fila
@@ -112,7 +112,7 @@ public class Materia {
            tabla.addCell(cell5);
 
            Cell cell6 = new Cell();
-           cell6.add(maestroMateria[nmateria]);
+           cell6.add("maestrooo");
            tabla.addCell(cell6);
 
            //cuarta fila
@@ -121,7 +121,7 @@ public class Materia {
            tabla.addCell(cell7);
 
            Cell cell8 = new Cell();
-           cell8.add(horario[nmateria]);
+           cell8.add(horario);
            tabla.addCell(cell8);
 
            //quinta fila
@@ -130,7 +130,7 @@ public class Materia {
            tabla.addCell(cell9);
 
            Cell cell10 = new Cell();
-           cell10.add(fechaInicio[nmateria]);
+           cell10.add(fechaInicio);
            tabla.addCell(cell10);
 
            //sexta fila
@@ -139,7 +139,7 @@ public class Materia {
            tabla.addCell(cell11);
 
            Cell cell12 = new Cell();
-           cell12.add(fechaFin[nmateria]);
+           cell12.add(fechaFin);
            tabla.addCell(cell12);
 
            documento.add(tabla);

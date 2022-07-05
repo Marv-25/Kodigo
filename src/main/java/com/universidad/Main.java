@@ -1,4 +1,5 @@
 package com.universidad;
+import java.util.ArrayList;
 import java.util.InputMismatchException;
 import java.util.List;
 import java.util.Scanner;
@@ -13,6 +14,7 @@ public class Main {
         int opcion3;
 
         Empleado empleado1 = new Empleado();
+        Estudiante estudiante1 = new Estudiante();
 
         while(!salir){
 
@@ -62,7 +64,10 @@ public class Main {
                                 break;
                             case 2:
                                 System.out.println("2. Listando Estudiante");
-                                //Implementar metodo
+                                ArrayList<Estudiante> estudiantes = BdEstudiantes.listarEstudiantes();
+                                for(Estudiante estudiante : estudiantes){
+                                    System.out.println(estudiante.toString());
+                                }
                                 break;
                             case 3:
                                 System.out.println("3. Eliminando Empleado");
