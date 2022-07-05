@@ -106,10 +106,6 @@ public class Empleado extends Usuario{
                 System.out.println(i + 1);
                 System.out.println(empleadosList.get(i));
             }
-            for (int i = 0; i < empleadosList.size(); i++) {
-                System.out.println(i + 1);
-                System.out.println(empleadosList.get(i));
-            }
         }
         return (ArrayList) empleadosList;
     }
