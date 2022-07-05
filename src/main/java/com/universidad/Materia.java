@@ -15,38 +15,51 @@ import java.util.Scanner;
 public class Materia {
 
 
-    @Setter @Getter
-    private String[] fechaInicio = {"30/06/2022","25/07/2022","15/08/2022","04/09/2022","12/10/2022","25/07/2022","03/03/2022","01/08/2022","07/10/2022"};
+    @Setter
+    @Getter
+    private String idMateria;
 
-    @Setter @Getter
-    private String[] fechaFin = {"01/12/2022","11/01/2023","20/12/2023","10/12/2022","03/11/2022","22/10/2022","20/08/2022","15/03/2023","10/06/2023"};
+    @Setter
+    @Getter
+    private String nombreMateria;
+
+    @Setter
+    @Getter
+    private String horario;
+
+    @Setter
+    @Getter
+    private String fechaInicio;
+
+    @Setter
+    @Getter
+    private String fechaFin;
 
 
-    @Setter @Getter
-    private String[] maestroMateria = {"Fernando","Pedro","Juan","Ernesto","Maria","Lara","Clotilde","Diana","Margarita"};
-
-    @Setter @Getter
-    private String[] idMateria = {"M01","M02","M03","M04","M05","M06","M07","M08","M09"};
-
-    @Setter @Getter
-    private String[] nombreMateria =  {"Matematicas","Fisica","Economia","Filosofia","Ingles","Frances","Programacion","Bases de datos","TIC"};
-
-    @Setter @Getter
-    private String[] horario = {"3:00PM-4:00PM","10:00AM-11:00AM","7:00AM-9:00AM","4:00PM-6:00PM","7:00PM-8:00PM","2:00PM-3:00PM","7:00AM-8:00AM","3:00PM-4:00PM","10:00AM-11:00AM"};
-
-
-
-
+    public Materia(String idMateria, String nombreMateria, String horario, String fechaInicio, String fechaFin) {
+        this.idMateria = idMateria;
+        this.nombreMateria = nombreMateria;
+        this.horario = horario;
+        this.fechaInicio = fechaInicio;
+        this.fechaFin = fechaFin;
+    }
 
     public void mostrarmaterias(){
         for (int i=0; i < idMateria.length; i++ ){
             System.out.println("Indice: "+  (i) +  " Codigo: " + idMateria[i] + " " + "Materia: " + nombreMateria[i] );
-
         }
-
     }
 
-
+    @Override
+    public String toString() {
+        return "Materia{" +
+                "idMateria='" + idMateria + '\'' +
+                ", nombreMateria='" + nombreMateria + '\'' +
+                ", horario='" + horario + '\'' +
+                ", fechaInicio='" + fechaInicio + '\'' +
+                ", fechaFin='" + fechaFin + '\'' +
+                '}';
+    }
 
     public  void mostrarInfo() throws FileNotFoundException {
 
@@ -58,7 +71,6 @@ public class Materia {
          int nmateria = entrada.nextInt();
 
 
-
         //Crear pdf PdfWriter
         String dest = "C:/Pruebas/prueba.pdf";
         PdfWriter writer = new PdfWriter(dest);
@@ -66,20 +78,12 @@ public class Materia {
         //Crear PdfDocument
         PdfDocument pdfDoc = new PdfDocument(writer);
 
-
-
         //Crear documento
         Document documento = new Document(pdfDoc);
-
-
-
 
         //creando tabla
         float [] pointColumnWidth = {150F, 150F};
         Table tabla = new Table(pointColumnWidth);
-
-
-
 
 
            //Agregando datos a la tabla
