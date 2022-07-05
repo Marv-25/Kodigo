@@ -6,7 +6,6 @@ import java.util.List;
 import java.util.Scanner;
 
 public class Main {
-
     public static void main(String[] args) {
         Scanner entrada = new Scanner(System.in);
         boolean salir = false;
@@ -79,11 +78,11 @@ public class Main {
                     case 3:
                         System.out.println("Listar Maestros");
                         Maestro maestro = new Maestro();
-                        maestro.identificarmaestros();
+                        maestro.identificarMaestros();
 
                         boolean check = empleado1.getEmpleadosList().isEmpty();
                         if(check == false){
-                            for(int j = 0; j<empleado1.getEmpleadosList().size(); j++){
+                            for(int j = 0; j < empleado1.getEmpleadosList().size(); j++){
                                 if (empleado1.getEmpleadosList().get(j).rol.equals("MAESTRO")){
                                     System.out.println(empleado1.getEmpleadosList().get(j));
                                 }

@@ -6,18 +6,16 @@ import lombok.Setter;
 import java.util.*;
 
 public class Empleado extends Usuario{
-    @Setter
-    @Getter
+    @Setter @Getter
     double salario;
-    @Setter
-    @Getter
+    @Setter @Getter
     String rol;
-    @Setter
-    @Getter
+    @Setter @Getter
     String cuentaBancaria;
-    @Setter
-    @Getter
+    @Setter @Getter
     String profesion;
+    public Empleado() {
+    }
 
     public Empleado(int idUsuario, String nombre, String apellido, String sexo, String fechaNacimiento,
                     String statusUsuario, double salario, String rol, String cuentaBancaria, String profesion) {
@@ -31,10 +29,6 @@ public class Empleado extends Usuario{
     public Empleado(List<Empleado> empleadosList) {
         this.empleadosList = empleadosList;
     }
-
-    public Empleado() {
-    }
-
     @Override
     public String toString() {
         return "Empleado{" + '\n' +
