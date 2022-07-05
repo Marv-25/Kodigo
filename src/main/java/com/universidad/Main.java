@@ -16,6 +16,7 @@ public class Main {
 
         Empleado empleado1 = new Empleado();
         Estudiante estudiante1 = new Estudiante();
+        Materia materia1 = new Materia();
 
         while(!salir){
 
@@ -28,7 +29,7 @@ public class Main {
                 System.out.println("5. Listar alumnos por materia y notas");
                 System.out.println("6. Salir");
             try{
-                opcion1 = entrada.nextInt();
+                opcion1 = Integer.parseInt(entrada.next());
                 if (opcion1<1 || opcion1>6){
                     System.out.println("Opcion invalida");
                 }
@@ -80,7 +81,7 @@ public class Main {
                         System.out.println("Listar Maestros");
                         Maestro maestro = new Maestro();
                         maestro.identificarmaestros();
-
+                        materia1.mostrarInfo();
                         boolean check = empleado1.getEmpleadosList().isEmpty();
                         if(check == false){
                             for(int j = 0; j<empleado1.getEmpleadosList().size(); j++){
@@ -89,7 +90,7 @@ public class Main {
                                 }
                             }
                         }
-
+                        break;
                     case 4:
                         System.out.println("Registrar notas de alumnos");
                         //Implementar metodo
@@ -108,8 +109,10 @@ public class Main {
             }catch (InputMismatchException e){
                 System.out.println("Debe ingresar un numero");
                 entrada.next();
-              }
+              } catch (FileNotFoundException e) {
+                throw new RuntimeException(e);
             }
+        }
         }
     }
 

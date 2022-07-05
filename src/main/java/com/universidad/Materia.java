@@ -75,7 +75,7 @@ public class Materia {
 
 
         //Crear pdf PdfWriter
-        String dest = "C:/Pruebas/prueba.pdf";
+        String dest = "C:/Pruebas/prueba"+nmateria+".pdf";
         PdfWriter writer = new PdfWriter(dest);
 
         //Crear PdfDocument
@@ -96,7 +96,7 @@ public class Materia {
            tabla.addCell(cell1);
 
            Cell cell2 = new Cell();
-           cell2.add(BdMaterias.listarMaterias().get(0).idMateria);
+           cell2.add(BdMaterias.listarMaterias().get(nmateria).idMateria);
            tabla.addCell(cell2);
 
 
@@ -106,7 +106,7 @@ public class Materia {
            tabla.addCell(cell3);
 
            Cell cell4 = new Cell();
-           cell4.add(BdMaterias.listarMaterias().get(0).nombreMateria);
+           cell4.add(BdMaterias.listarMaterias().get(nmateria).nombreMateria);
            tabla.addCell(cell4);
 
            //tercera fila
@@ -124,7 +124,7 @@ public class Materia {
            tabla.addCell(cell7);
 
            Cell cell8 = new Cell();
-           cell8.add(BdMaterias.listarMaterias().get(0).horario);
+           cell8.add(BdMaterias.listarMaterias().get(nmateria).horario);
            tabla.addCell(cell8);
 
            //quinta fila
@@ -133,7 +133,7 @@ public class Materia {
            tabla.addCell(cell9);
 
            Cell cell10 = new Cell();
-           cell10.add(BdMaterias.listarMaterias().get(0).fechaInicio);
+           cell10.add(BdMaterias.listarMaterias().get(nmateria).fechaInicio);
            tabla.addCell(cell10);
 
            //sexta fila
@@ -142,14 +142,14 @@ public class Materia {
            tabla.addCell(cell11);
 
            Cell cell12 = new Cell();
-           cell12.add(BdMaterias.listarMaterias().get(0).fechaFin);
+           cell12.add(BdMaterias.listarMaterias().get(nmateria).fechaFin);
            tabla.addCell(cell12);
 
            documento.add(tabla);
 
            documento.close();
 
-           entrada.close();
+           //entrada.close();
 
            System.out.println("Documento PDF creado");
 
