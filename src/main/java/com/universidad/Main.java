@@ -60,7 +60,7 @@ public class Main {
                         switch (opcion3){
                             case 1:
                                 System.out.println("1. Registrando Estudiante");
-                                //Implementar metodo
+                                estudiante1.registrarUsuario();
                                 break;
                             case 2:
                                 System.out.println("2. Listando Estudiante");
@@ -70,8 +70,8 @@ public class Main {
                                 }
                                 break;
                             case 3:
-                                System.out.println("3. Eliminando Empleado");
-                                //Implementar metodo
+                                System.out.println("3. Eliminando Estudiante");
+                                estudiante1.eliminarUsuario();
                                 break;
                         }
                         break;
@@ -101,6 +101,7 @@ public class Main {
                         //Implementar metodo
                         break;
                     case 6:
+                        System.out.println("Saliendo del sistema");
                         salir = true;
                         break;
                     default:
