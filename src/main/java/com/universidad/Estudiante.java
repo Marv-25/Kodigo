@@ -63,12 +63,12 @@ public class Estudiante extends Usuario{
 
 
 
-    public void mostarUsuario(){
+    public ArrayList listarUsuario(){
         for (int i=0; i<estudiantesList.size(); i++){
             System.out.println(i+1);
-            System.out.println("Nombre: "+estudiantesList.get(i).getNombre());
-            System.out.println("Apellido: "+estudiantesList.get(i).getApellido());
+            System.out.println(estudiantesList.get(i));
         }
+        return (ArrayList) estudiantesList;
     }
 
     @Override
