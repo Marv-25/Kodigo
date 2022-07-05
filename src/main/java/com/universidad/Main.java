@@ -1,4 +1,5 @@
 package com.universidad;
+import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.InputMismatchException;
 import java.util.List;
@@ -77,13 +78,10 @@ public class Main {
                         break;
                     case 3:
                         System.out.println("Listar Maestros");
+                        Maestro maestro = new Maestro();
+                        maestro.identificarmaestros();
 
                         boolean check = empleado1.getEmpleadosList().isEmpty();
-                        for (int i = 0; i< BdEmpleados.listarEmpleados().size(); i++) {
-                             if(BdEmpleados.listarEmpleados().get(i).rol .equals("MAESTRO")){
-                                 System.out.println(BdEmpleados.listarEmpleados().get(i));
-                            }
-                        }
                         if(check == false){
                             for(int j = 0; j<empleado1.getEmpleadosList().size(); j++){
                                 if (empleado1.getEmpleadosList().get(j).rol.equals("MAESTRO")){
@@ -109,7 +107,8 @@ public class Main {
             }catch (InputMismatchException e){
                 System.out.println("Debe ingresar un numero");
                 entrada.next();
+              }
             }
         }
     }
-}
+
