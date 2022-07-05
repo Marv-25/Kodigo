@@ -9,7 +9,7 @@ public class BdMaterias {
         Materia materia1 = new Materia ("QUIM1","QUIMICA 1","TURNO1","11-06-2021","01-12-2022");
         Materia materia2 = new Materia ("QUIM2","QUIMICA 2","TURNO2","11-06-2021","01-12-2022");
         Materia materia3 = new Materia ("QUIM3","QUIMICA 3","TURNO3","11-06-2021","01-12-2022");
-        Materia materia4 = new Materia ("QUIM4","QUIMICA 4","TURNO1","11-06-2021","01-12-2022");
+        Materia materia4 = new Materia ("PROG1","PROGRAMACION 1","TURNO1","11-06-2021","01-12-2022");
         Materia materia5 = new Materia ("FIS1","FISICA 1","TURNO1","11-06-2021","01-12-2022");
         Materia materia6 = new Materia ("FIS2","FISICA 2","TURNO2","11-06-2021","01-12-2022");
         Materia materia7 = new Materia ("ING1","INGENIERIA 1","TURNO3","11-06-2021","01-12-2022");
