@@ -16,6 +16,7 @@ public class Main {
 
         Empleado empleado1 = new Empleado();
         Estudiante estudiante1 = new Estudiante();
+        Materia materia1 = new Materia();
 
         while(!salir){
 
@@ -28,7 +29,7 @@ public class Main {
                 System.out.println("5. Listar alumnos por materia y notas");
                 System.out.println("6. Salir");
             try{
-                opcion1 = entrada.nextInt();
+                opcion1 = Integer.parseInt(entrada.next());
                 if (opcion1<1 || opcion1>6){
                     System.out.println("Opcion invalida");
                 }
@@ -61,7 +62,7 @@ public class Main {
                         switch (opcion3){
                             case 1:
                                 System.out.println("1. Registrando Estudiante");
-                                //Implementar metodo
+                                estudiante1.registrarUsuario();
                                 break;
                             case 2:
                                 System.out.println("2. Listando Estudiante");
@@ -71,8 +72,8 @@ public class Main {
                                 }
                                 break;
                             case 3:
-                                System.out.println("3. Eliminando Empleado");
-                                //Implementar metodo
+                                System.out.println("3. Eliminando Estudiante");
+                                estudiante1.eliminarUsuario();
                                 break;
                         }
                         break;
@@ -80,7 +81,7 @@ public class Main {
                         System.out.println("Listar Maestros");
                         Maestro maestro = new Maestro();
                         maestro.identificarmaestros();
-
+                        materia1.mostrarInfo();
                         boolean check = empleado1.getEmpleadosList().isEmpty();
                         if(check == false){
                             for(int j = 0; j<empleado1.getEmpleadosList().size(); j++){
@@ -89,7 +90,7 @@ public class Main {
                                 }
                             }
                         }
-
+                        break;
                     case 4:
                         System.out.println("Registrar notas de alumnos");
                         //Implementar metodo
@@ -99,6 +100,7 @@ public class Main {
                         //Implementar metodo
                         break;
                     case 6:
+                        System.out.println("Saliendo del sistema");
                         salir = true;
                         break;
                     default:
@@ -107,8 +109,10 @@ public class Main {
             }catch (InputMismatchException e){
                 System.out.println("Debe ingresar un numero");
                 entrada.next();
-              }
+              } catch (FileNotFoundException e) {
+                throw new RuntimeException(e);
             }
+        }
         }
     }
 

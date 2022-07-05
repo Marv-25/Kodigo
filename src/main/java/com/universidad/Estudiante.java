@@ -4,6 +4,7 @@ import lombok.Getter;
 import lombok.Setter;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Scanner;
 
@@ -34,12 +35,12 @@ public class Estudiante extends Usuario{
     @Override
     public String registrarUsuario() {
         int listSize = estudiantesList.size();
-        System.out.println("Cantidad de estudiantes a inscribir?");
+        System.out.println("Cantidad de estudiantes a inscribir");
             listSize = entrada.nextInt();
         for (int i = 0; i < listSize; i++) {
             System.out.println(i+1);
-            System.out.println("Asigne un ID");
-            int id = entrada.nextInt();
+            System.out.println("ID asignado");
+            int id = (int) (Math.random() * 1000);
             entrada.nextLine();
             System.out.println("Nombre del estudiante");
             String nombre = entrada.nextLine();
@@ -64,11 +65,31 @@ public class Estudiante extends Usuario{
 
 
     public ArrayList listarUsuario(){
-        for (int i=0; i<estudiantesList.size(); i++){
-            System.out.println(i+1);
-            System.out.println(estudiantesList.get(i));
+        if (estudiantesList.size() == 0) {
+            System.out.println("Lista de empleados vacia");
+        } else {
+            for (int i = 0; i < estudiantesList.size(); i++) {
+                System.out.println(i + 1);
+                System.out.println(estudiantesList.get(i));
+            }
         }
         return (ArrayList) estudiantesList;
+    }
+
+    @Override
+    public void eliminarUsuario() {
+        if (estudiantesList.size() == 0) {
+            System.out.println("Lista vacia, imposible eliminar empleado");
+        } else {
+            System.out.println("Indique el indice del empleado a eliminar");
+            int indice = entrada.nextInt();
+            estudiantesList.remove(indice - 1);
+            Iterator iterador = estudiantesList.iterator();
+            while (iterador.hasNext()) {
+                System.out.println(iterador.next());
+            }
+        }
+
     }
 
     @Override
