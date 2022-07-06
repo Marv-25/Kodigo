@@ -14,7 +14,6 @@ import java.util.Scanner;
 
 public class Materia {
 
-
     @Setter
     @Getter
     private String idMateria;
@@ -65,7 +64,6 @@ public class Materia {
     }
 
     public  void mostrarInfo() throws FileNotFoundException {
-
 
         Scanner entrada = new Scanner(System.in);
         System.out.println(" ");

@@ -14,8 +14,6 @@ public class Empleado extends Usuario{
     String cuentaBancaria;
     @Setter @Getter
     String profesion;
-    public Empleado() {
-    }
 
     public Empleado(int idUsuario, String nombre, String apellido, String sexo, String fechaNacimiento,
                     String statusUsuario, double salario, String rol, String cuentaBancaria, String profesion) {
@@ -24,6 +22,8 @@ public class Empleado extends Usuario{
         this.rol = rol;
         this.cuentaBancaria = cuentaBancaria;
         this.profesion = profesion;
+    }
+    public Empleado() {
     }
 
     public Empleado(List<Empleado> empleadosList) {
@@ -68,7 +68,7 @@ public class Empleado extends Usuario{
             String apellido = entrada.nextLine();
             System.out.println("Ingresar sexo del empleado(FEM o MAS)");
             String sexo = entrada.nextLine();
-            System.out.println("Fecha de nacimiento");
+            System.out.println("Fecha de nacimiento(dd-mm-aaaa)");
             String fechaNacimiento = entrada.nextLine();
             System.out.println("Status del empleado");
             String status = entrada.nextLine();
@@ -119,4 +119,5 @@ public class Empleado extends Usuario{
         }
 
     }
+
 }

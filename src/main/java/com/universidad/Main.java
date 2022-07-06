@@ -15,17 +15,18 @@ public class Main {
 
         Empleado empleado1 = new Empleado();
         Estudiante estudiante1 = new Estudiante();
+        PagoCuota pago1 = new PagoCuota();
 
         while(!salir){
 
-                System.out.println("*****************************************");
-                System.out.println("Seleccione una de las siguientes opciones");
-                System.out.println("1. Registrar/Listar/Eliminar Empleado");
-                System.out.println("2. Registrar/Listar/Eliminar Estudiante");
-                System.out.println("3. Listar Maestros");
-                System.out.println("4. Registrar notas de alumnos");
-                System.out.println("5. Listar alumnos por materia y notas");
-                System.out.println("6. Salir");
+            System.out.println("*****************************************");
+            System.out.println("Seleccione una de las siguientes opciones");
+            System.out.println("1. Registrar/Listar/Eliminar Empleado");
+            System.out.println("2. Registrar/Listar/Eliminar Estudiante");
+            System.out.println("3. Listar Maestros");
+            System.out.println("4. Registrar notas de alumnos");
+            System.out.println("5. Listar alumnos por materia y notas");
+            System.out.println("6. Salir");
             try{
                 opcion1 = entrada.nextInt();
                 if (opcion1<1 || opcion1>6){
@@ -56,11 +57,13 @@ public class Main {
                         System.out.println("1. Registrar Estudiante");
                         System.out.println("2. Listar Estudiante");
                         System.out.println("3. Eliminar Estudiante");
+                        System.out.println("4. Procesar Pago de Cuota");
                         opcion3 = entrada.nextInt();
                         switch (opcion3){
                             case 1:
                                 System.out.println("1. Registrando Estudiante");
                                 estudiante1.registrarUsuario();
+
                                 break;
                             case 2:
                                 System.out.println("2. Listando Estudiante");
@@ -72,6 +75,10 @@ public class Main {
                             case 3:
                                 System.out.println("3. Eliminando Estudiante");
                                 estudiante1.eliminarUsuario();
+                                break;
+                            case 4:
+                                System.out.println("4. Pago de Estudiante");
+                                pago1.gestionarPagos();
                                 break;
                         }
                         break;
@@ -107,8 +114,8 @@ public class Main {
             }catch (InputMismatchException e){
                 System.out.println("Debe ingresar un numero");
                 entrada.next();
-              }
             }
         }
+    }
     }
 
